@@ -9,7 +9,7 @@
 
 {% if edit_id %}
 $(document).ready(function(){
-  
+
 });
 {% endif %}
 
@@ -37,7 +37,7 @@ function setBadge(badgeType) {
         $(".group_fields").addClass("hide");
         if (badgeType == 'Attendee') {
             $("input[name='badge_type']").val("{{ ATTENDEE_BADGE }}");
-            $("#attendee_select").addClass("active"); 
+            $("#attendee_select").addClass("active");
             $.field("amount_extra").val('0').trigger("change");
         }
         if (badgeType == 'Group') {
@@ -75,13 +75,13 @@ $(document).ready(function() {
 </script>
 
 <div class="panel panel-default">
-<div class="row bs-wizard" style="border-bottom:0;border-top:0;">   
+<div class="row bs-wizard" style="border-bottom:0;border-top:0;">
     <div class="col-xs-4 bs-wizard-step active">
       <div class="text-center bs-wizard-stepnum">Step 1</div>
       <div class="progress"><div class="progress-bar"></div></div>
       <a class="bs-wizard-dot"></a>
       <div class="bs-wizard-info text-center">Enter Info</div>
-    </div> 
+    </div>
     <div class="col-xs-4 bs-wizard-step disabled">
       <div class="text-center bs-wizard-stepnum">Step 2</div>
       <div class="progress"><div class="progress-bar"></div></div>
@@ -172,7 +172,7 @@ $(document).ready(function() {
     <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Business Name</label>
     <div class="col-sm-6">
-      <input class="form-control" type="text" class="focus" name="name" value="{{ group.name }}" />
+      <input class="form-control focus" type="text" name="name" value="{{ group.name }}" />
     </div>
     </div>
 
@@ -182,7 +182,7 @@ $(document).ready(function() {
       <select class="form-control" name="tables">
                 {% int_options 1 MAX_TABLES group.tables %}
             </select> ({{ TABLE_PRICES }})
-            
+
     </div>
     <div class="form-group">
     <p class="help-block col-sm-6 col-sm-offset-2">[<i>You may contact us via <a href='{{ CONTACT_URL }}'>{{ CONTACT_URL }}</a> to request more than {{ MAX_TABLES }} tables.</i>]</p>
@@ -222,7 +222,7 @@ $(document).ready(function() {
     <div class="form-group">
     <label for="description" class="col-sm-2 control-label">Description</label>
     <div class="col-sm-6">
-      <textarea class="form-control" name="description" rows="4">{{ group.description }}</textarea> 
+      <textarea class="form-control" name="description" rows="4">{{ group.description }}</textarea>
     </div>
     </div>
     <div class="form-group">
