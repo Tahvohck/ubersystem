@@ -87,6 +87,9 @@ def dept_placeholders(department):
         else:
             return session.query(Attendee).filter_by(badge_type=STAFF_BADGE, placeholder=True).order_by(Attendee.full_name).all()
 
+@register.filter
+def get_config(conf, key):
+    return conf[key.encode("UTF-8")]
 
 @tag
 class maybe_anchor(template.Node):
