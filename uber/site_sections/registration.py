@@ -46,7 +46,8 @@ class Root:
         for a in session.query(Attendee) \
                         .filter(Attendee.first_name == '', Attendee.group_id != None) \
                         .options(joinedload(Attendee.group)).all():
-            groups.add((a.group.id, a.group.name + (' ({})'.format(a.group.leader.full_name) if a.group.leader else '')))
+            short_group_name = a.group.name[:20] + "..." if len(a.group.name) > 23 else a.group.name
+            groups.add((a.group.id, short_group_name + (' ({})'.format(a.group.leader.full_name) if a.group.leader else '')))
 
         if search_text and count == total_count:
             message = 'No matches found'
